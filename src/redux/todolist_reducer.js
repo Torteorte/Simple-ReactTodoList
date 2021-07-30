@@ -4,9 +4,9 @@ const UPDATE_NEW_TEXT_BODY = "UPDATE_NEW_TEXT_BODY"
 
 let initialState = {
    todoItems: [
-      { id: 1, itemText: "Изучить ReactJS" },
-      { id: 2, itemText: "Задеплоить проекты" },
-      { id: 3, itemText: "Изучить Препроцессор" }
+      { id: Math.random(), itemText: "Изучить ReactJS" },
+      { id: Math.random(), itemText: "Задеплоить проекты" },
+      { id: Math.random(), itemText: "Изучить Препроцессор" }
    ],
    newTextBody: ""
 }
@@ -15,15 +15,6 @@ let todolistReducer = (state = initialState, action) => {
    switch (action.type) {
 
       case DELETE_ITEM:
-         // const newItems = [...state.todoItems];
-         // delete newItems[action.payload];
-
-         // return {
-         //    ...state,
-         //    // todoItems: []
-         //    todoItems: newItems,
-         // }
-
          return {
             ...state,
             todoItems: state.todoItems.filter(p => p.id !== action.itemId)
@@ -37,7 +28,7 @@ let todolistReducer = (state = initialState, action) => {
 
       case ADD_ITEM_LIST:
          let newTodo = {
-            id: state.todoItems.length + 1, itemText: state.newTextBody
+            id: Math.random(), itemText: state.newTextBody
          }
          return {
             ...state,

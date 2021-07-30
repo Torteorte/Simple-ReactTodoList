@@ -30,9 +30,9 @@ const Main = () => {
             listItemText={listItemText}
          />
          <div className="items-to-do">
-            {listItem.map(obj =>
+            {listItem.map((obj, index) =>
                <Item
-                  key={obj.id}
+                  key={index}
                   {...obj}
                   deleteToDoItem={deleteToDoItem}
                />

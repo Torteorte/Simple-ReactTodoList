@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addItemTodoAC, deleteTodoAC, updateNewTextBodyAC } from '../../redux/todolist_reducer';
+import { addItemTodoAC, deleteTodoAC, toggleTodoAC, updateNewTextBodyAC } from '../../redux/todolist_reducer';
 import InputField from './InputField/InputField'
 import Item from './Item/Item'
 
@@ -22,6 +22,10 @@ const Main = () => {
       dispatch(deleteTodoAC(id));
    };
 
+   const toggleToDoItem = (id, done) => {
+      dispatch(toggleTodoAC(id, done));
+   };
+
    return (
       <main>
          <InputField
@@ -35,6 +39,7 @@ const Main = () => {
                   key={index}
                   {...obj}
                   deleteToDoItem={deleteToDoItem}
+                  toggleToDoItem={toggleToDoItem}
                />
             )}
          </div>

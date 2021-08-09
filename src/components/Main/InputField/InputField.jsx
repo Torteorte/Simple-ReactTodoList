@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 const InputField = (props) => {
 
@@ -25,5 +26,15 @@ const InputField = (props) => {
       </div>
    )
 }
+
+InputField.propTypes = {
+   listItemText: PropTypes.string,
+   addItem: PropTypes.func,
+   updateItem: PropTypes.func
+};
+
+InputField.defaultProps = {
+   listItemText: ''
+};
 
 export default InputField

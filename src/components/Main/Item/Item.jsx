@@ -1,5 +1,6 @@
 import React from 'react'
 import trash from './../../../assets/img/trash.png'
+import PropTypes from 'prop-types';
 
 const Item = ({ id, itemText, done, deleteToDoItem, toggleToDoItem }) => {
 
@@ -20,5 +21,13 @@ const Item = ({ id, itemText, done, deleteToDoItem, toggleToDoItem }) => {
       </div>
    )
 }
+
+Item.propTypes = {
+   id: PropTypes.number,
+   itemText: PropTypes.string,
+   done: PropTypes.bool,
+   deleteToDoItem: PropTypes.func,
+   toggleToDoItem: PropTypes.func,
+};
 
 export default Item

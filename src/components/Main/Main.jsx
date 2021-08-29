@@ -36,7 +36,7 @@ const Main = () => {
          <div className="items-to-do">
             {listItem.map((obj, index) =>
                <Item
-                  key={index}
+                  key={obj.id}
                   {...obj}
                   deleteToDoItem={deleteToDoItem}
                   toggleToDoItem={toggleToDoItem}
